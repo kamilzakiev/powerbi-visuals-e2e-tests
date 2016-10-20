@@ -1,5 +1,5 @@
 ﻿declare namespace WebdriverIO {
     export interface Client<T> {
-        executeSpec(assertion: (done: () => void) => void | (() => void), timeout?: number): Client<void>;
+        executeSpec(assertion: ((done?: DoneFn) => void), timeout?: number): Client<void>;
     }
 }

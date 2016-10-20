@@ -62,11 +62,11 @@ export module visualConfig {
                     if(!url) continue;
 
                     jasmine.getEnv().describe(reportKey, () => {
-                        beforeEach(() => jasmine.initTestWDClient(url)
+                        beforeEach(() => jasmine.initTestPage(url)
                             .then(() => {
                                 if(visualTestConfig.execFiles) {
                                     let files = Helpers.getFilesByGlob(visualTestConfig.execFiles, configDir);
-                                    return jasmine.WDClient.executeFiles(files);
+                                    return browser.executeFiles(files);
                                 }
                             })
                         );
@@ -78,10 +78,6 @@ export module visualConfig {
     }
 
     function getBrowsers(visualTestConfig: VisualTestConfig): Browser[] {
-        /*if(Helpers.isAppveyor()) {
-            return [Browser.chrome];
-        }*/
-
         let browsers = (<Browser[]><any>Object.keys(visualTestConfig.browsers))
                 .filter(key => visualTestConfig.browsers[key])
                 .filter(x => !!x);

@@ -15,8 +15,7 @@ After that you will be able to launch tests using gulp commands. Note that you s
 ```javascript
 // build the project
 gulp build
-// install and start selenium
-gulp install-start-selenium
+
 // run tests
 gulp run
 
@@ -24,12 +23,16 @@ gulp run
 
 // build and run tests (selenium server should be installed and run)
 gulp build-run
+
+We also are able to start the selenium server manually as a separate process that will make launching tests faster using the following command
+gulp start-selenium-server
+
 ```
 ##Creating new test
 Steps that should be taken to create new test:
 
 1. Create report for the custom visual and generate "Publish to web" link to it.
-2. Create new folder under "src/CustomVisualsTests/visuals/".
+2. Create new folder under "src/VisualsTests/CustomVisuals/".
 3. Add config.json file that is used to specify browsers and link to generated report. "prod" link is used to set the link to the embedded report, "dxt" and "msit" links are used if you have access to these environments.
 4. Add test file in Typescript format.
 5. Add .pbix file so it can be used to change your report later.

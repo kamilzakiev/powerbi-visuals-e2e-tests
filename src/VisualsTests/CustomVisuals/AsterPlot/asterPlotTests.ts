@@ -1,8 +1,9 @@
 import {visualConfig} from "../../exports";
 
-visualConfig.describe("AsterPlot", __dirname, (reportUrl) => {
+visualConfig.
+describe("AsterPlot", __dirname, (reportUrl) => {
     beforeEach(() => {
-        return jasmine.WDClient
+        return browser
             .waitForVisible("svg.asterPlot g.asterSlices");
     });
 
@@ -20,6 +21,6 @@ visualConfig.describe("AsterPlot", __dirname, (reportUrl) => {
         });
 
         clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "2.47K")
-            .then(done);
+            .then(done, done.fail);
     });
 });

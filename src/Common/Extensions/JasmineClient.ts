@@ -17,7 +17,7 @@ module JasmineClient {
                 }
 
                 arguments[1] = () => {
-                    return jasmine.WDClient.executeSpec(<any>clientFunction, timeout);
+                    return browser.executeSpec(<any>clientFunction, timeout);
                 };
 
                 return (<Function>global[fnName]).apply(this, arguments);

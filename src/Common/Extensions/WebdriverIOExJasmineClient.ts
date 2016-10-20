@@ -15,7 +15,7 @@ module WebdriverIOExJasmineClient {
                         if(!result.value) {
                             return client
                                 .execute(function(code) { eval(code); }, jasmineCoreJsContent) //load jasmine core
-                                .catch(err => { throw "Spec execution: There is an error loading jasmine"; });
+                                .catch(err => { throw new Error("Spec execution: There is an error loading jasmine"); });
                         }
                     })
                     .execute(getBootWebdriverIOExJasmineClient(), jasmine.DEFAULT_TIMEOUT_INTERVAL) //init jasmine
@@ -27,7 +27,7 @@ module WebdriverIOExJasmineClient {
                             specExecutionResult.failedExpectations.forEach(e => jasmine.currentSpec.result.failedExpectations.push(e));
                             specExecutionResult.passedExpectations.forEach(e => jasmine.currentSpec.result.passedExpectations.push(e));
                         } catch(error) {
-                            throw "Spec execution: There is no valid response from the client: " + result.value;
+                            throw new Error("Spec execution: There is no valid response from the client: " + result.value);
                         }
                     });
             })
@@ -82,5 +82,5 @@ module WebdriverIOExJasmineClient {
 }
 
 export function initWebdriverIOExJasmineClient() {
-    jasmine.events.on("WDClientChanged", WebdriverIOExJasmineClient.initWebdriverIOExJasmineClient);
+    WebdriverIOExJasmineClient.initWebdriverIOExJasmineClient(browser);
 }

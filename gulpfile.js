@@ -1,8 +1,11 @@
 var gulp = require("gulp");
+var path = require("path");
 var runSequence = require("run-sequence")
-var builder = require("./node_modules/visual-regression-test-runner/builder");
+var builder = require("tsconfig-extended-typescript-builder");
 var visualRegressionTestRunner = require("visual-regression-test-runner");
+var webdriverStandaloneServer = require("webdriver-standalone-server");
 
+var webDriver = new webdriverStandaloneServer.WebDriver(path.join(__dirname, "./WebDriver.config.js"));
 var tsConfigPath = __dirname + "/src/Common/tsconfig";
 
 gulp.task("build", () => {
@@ -12,18 +15,16 @@ gulp.task("build", () => {
 });
 
 gulp.task("clean", () => {
-    builder.clean(tsConfigPath);
+    builder.clean(tsConfigPath)
 });
 
 gulp.task("run", () => {
-    return visualRegressionTestRunner.TestRunner
-        .run({
-            configPath: "./config.js",
-            autoRunSeleniumServer: true
-        })
-        .then(
-        () => process.exit(0),
-        () => process.exit(1));
+    return webDriver
+        .autoStartServer(webdriverStandaloneServer.WebDriverType.Selenium, false)
+        .then(() => visualRegressionTestRunner.TestRunner.run({
+            config: path.join(__dirname, "./config.js")
+        }), visualRegressionTestRunner.Helpers.logError)
+        .then(() => process.exit(0), (ex) => process.exit(1));
 });
 
 gulp.task('build-run', () => {
@@ -31,5 +32,5 @@ gulp.task('build-run', () => {
 });
 
 gulp.task("start-selenium-server", () => {
-    return visualRegressionTestRunner.SeleniumServer.installStart();
+    return webDriver.autoStartServer(webdriverStandaloneServer.WebDriverType.Selenium);
 });
