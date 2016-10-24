@@ -15,10 +15,7 @@
         }
 
 		public get slices() {
-            return this.mainElement
-                .children("g")
-                .children("g.asterSlices")
-                .children("path.asterSlice");
+            return this.mainElement.find("g.asterSlices path.asterSlice");
         }
 	}
 }

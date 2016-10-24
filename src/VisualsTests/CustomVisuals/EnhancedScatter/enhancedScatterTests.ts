@@ -4,7 +4,7 @@ visualConfig.
 describe("EnhancedScatter", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.enhancedScatterChart > svg.svgScrollable svg > g.ScatterMarkers > * ");
+            .waitForExist("svg.enhancedScatterChart > svg.svgScrollable svg > g.ScatterMarkers > * ");
     });
 
     itClient("selection test", function (done) {

@@ -62,14 +62,13 @@ export module visualConfig {
                     if(!url) continue;
 
                     jasmine.getEnv().describe(reportKey, () => {
-                        beforeEach(() => jasmine.initTestPage(url)
-                            .then(() => {
-                                if(visualTestConfig.execFiles) {
-                                    let files = Helpers.getFilesByGlob(visualTestConfig.execFiles, configDir);
-                                    return browser.executeFiles(files);
-                                }
-                            })
-                        );
+                        jasmine.beforeEachInitTestPage(url);
+                        beforeEach(() => {
+                            if(visualTestConfig.execFiles) {
+                                let files = Helpers.getFilesByGlob(visualTestConfig.execFiles, configDir);
+                                return browser.executeFiles(files);
+                            }
+                        });
                         specDefinitions(url);
                     });
                 }

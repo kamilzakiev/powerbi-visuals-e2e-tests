@@ -4,7 +4,7 @@ visualConfig.
 describe("GlobeMap", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("div > div + div > canvas");
+            .waitForExist("div > div + div > canvas");
     });
 
     itClient("dom validation tests", function (done) {

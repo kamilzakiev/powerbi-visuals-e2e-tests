@@ -4,7 +4,7 @@ visualConfig.
 describe("ForceGraph", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.forceGraph > g.node > *");
+            .waitForExist("svg.forceGraph > g.node > *");
     });
 
     itClient("dom validation tests", function () {

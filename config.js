@@ -1,6 +1,6 @@
 module.exports = {
     jasmine: {
-        defaultTimeoutInterval: 12000000,
+        defaultTimeoutInterval: 150000,
         onInit: require("./lib/Common/extensions/JasmineClient").initJasmineClient
     },
     webdriverio: {

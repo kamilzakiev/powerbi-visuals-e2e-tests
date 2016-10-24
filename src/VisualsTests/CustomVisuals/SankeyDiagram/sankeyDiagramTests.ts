@@ -4,7 +4,7 @@ visualConfig.
 describe("SankeyDiagram", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.sankeyDiagram g.links > *");
+            .waitForExist("svg.sankeyDiagram g.links > *");
     });
 
     itClient("selection test", function (done) {

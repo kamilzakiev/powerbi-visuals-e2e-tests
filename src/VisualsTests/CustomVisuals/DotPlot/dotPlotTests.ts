@@ -4,7 +4,7 @@ visualConfig.
 describe("DotPlot", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.dotplot g.dotplotGroup > *");
+            .waitForExist("svg.dotplot g.dotplotGroup > *");
     });
 
     itClient("selection test", function (done) {

@@ -4,9 +4,9 @@ visualConfig.
 describe("SandboxedVisual", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("iframe.visual-sandbox")
+            .waitForExist("iframe.visual-sandbox")
             .element("iframe.visual-sandbox").then((res) => browser.frame(res.value)) // Selects the sandbox iframe.
-            .waitForVisible("svg.tornado-chart g.columns > *");
+            .waitForExist("svg.tornado-chart g.columns > *");
     });
 
     it("selection test", (done) => {

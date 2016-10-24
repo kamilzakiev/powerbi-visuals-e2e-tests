@@ -4,7 +4,7 @@ visualConfig.
 describe("BulletChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("div.bulletChart rect.range");
+            .waitForExist("div.bulletChart rect.range");
     });
 
     itClient("selection test", function (done) {

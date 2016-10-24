@@ -4,7 +4,7 @@ visualConfig.
 describe("SandDance", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("div.sandDance canvas.canvas3d");
+            .waitForExist("div.sandDance canvas.canvas3d");
     });
 
     itClient("dom validation tests", function (done) {
@@ -27,6 +27,6 @@ describe("SandDance", __dirname, (reportUrl) => {
                 pixels);
             expect(_.uniq(pixels).length).toBeGreaterThan(0);
             done();
-        }, done.fail, 5000);
+        }, done.fail, 10000);
     });
 });

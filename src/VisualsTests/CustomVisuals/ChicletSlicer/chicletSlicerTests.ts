@@ -4,7 +4,7 @@ visualConfig.
 describe("ChicletSlicer", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("div.chicletSlicer div.cell > *");
+            .waitForExist("div.chicletSlicer div.cell > *");
     });
 
     itClient("selection test", function (done) {

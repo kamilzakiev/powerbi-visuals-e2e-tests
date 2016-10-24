@@ -4,7 +4,7 @@ visualConfig.
 describe("LineDotChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.lineDotChart g.line circle.point");
+            .waitForExist("svg.lineDotChart g.line circle.point");
     });
 
     itClient("selection test", function (done) {

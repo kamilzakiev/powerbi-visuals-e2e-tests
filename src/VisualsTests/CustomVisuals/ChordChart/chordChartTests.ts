@@ -4,7 +4,7 @@ visualConfig.
 describe("ChordChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.chordChart g.slices > *");
+            .waitForExist("svg.chordChart g.slices > *");
     });
 
     itClient("selection test", function (done) {

@@ -4,7 +4,7 @@ visualConfig.
 describe("PulseChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.pulseChart g.dotsContainer > *");
+            .waitForExist("svg.pulseChart g.dotsContainer > *");
     });
 
     itClient("selection test", function (done) {

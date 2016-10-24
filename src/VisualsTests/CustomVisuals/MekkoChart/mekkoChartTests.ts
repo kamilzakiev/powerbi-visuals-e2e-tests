@@ -4,7 +4,7 @@ visualConfig.
 describe("MekkoChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg svg.columnChartMainGraphicsContext > g.series > *");
+            .waitForExist("svg svg.columnChartMainGraphicsContext > g.series > *");
     });
 
     itClient("selection test", function (done) {

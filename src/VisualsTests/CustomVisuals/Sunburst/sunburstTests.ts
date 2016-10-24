@@ -4,7 +4,7 @@ visualConfig.
 describe("Sunburst", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.mainDrawArea g.container > *");
+            .waitForExist("svg.mainDrawArea g.container > *");
     });
 
     itClient("selection test", function (done) {

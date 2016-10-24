@@ -4,7 +4,7 @@ visualConfig.
 describe("Gantt", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("div.gantt-body g.task-group > g.task > *");
+            .waitForExist("div.gantt-body g.task-group > g.task > *");
     });
 
     itClient("selection test", function (done) {

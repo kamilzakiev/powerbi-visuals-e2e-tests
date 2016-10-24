@@ -2,7 +2,7 @@ var gulp = require("gulp");
 var path = require("path");
 var runSequence = require("run-sequence")
 var builder = require("tsconfig-extended-typescript-builder");
-var visualRegressionTestRunner = require("visual-regression-test-runner");
+var webdriverClientTestRunner = require("webdriver-client-test-runner");
 var webdriverStandaloneServer = require("webdriver-standalone-server");
 
 var webDriver = new webdriverStandaloneServer.WebDriver(path.join(__dirname, "./WebDriver.config.js"));
@@ -21,9 +21,9 @@ gulp.task("clean", () => {
 gulp.task("run", () => {
     return webDriver
         .autoStartServer(webdriverStandaloneServer.WebDriverType.Selenium, false)
-        .then(() => visualRegressionTestRunner.TestRunner.run({
+        .then(() => webdriverClientTestRunner.TestRunner.run({
             config: path.join(__dirname, "./config.js")
-        }), visualRegressionTestRunner.Helpers.logError)
+        }), webdriverClientTestRunner.Helpers.logError)
         .then(() => process.exit(0), (ex) => process.exit(1));
 });
 

@@ -4,7 +4,7 @@ visualConfig.
 describe("Timeline", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.timeline g.cursorsArea > *");
+            .waitForExist("svg.timeline g.cursorsArea > *");
     });
 
     itClient("selection test", function (done) {

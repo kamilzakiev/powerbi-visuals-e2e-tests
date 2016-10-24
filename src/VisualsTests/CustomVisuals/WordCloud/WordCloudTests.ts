@@ -4,7 +4,7 @@ visualConfig.
 describe("WordCloud", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.wordCloud g.words > g.word")
+            .waitForExist("svg.wordCloud g.words > g.word > *")
             .pause(1000);
     });
 

@@ -4,7 +4,7 @@ visualConfig.
 describe("StreamGraph", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.streamGraph g.dataPointsContainer > *");
+            .waitForExist("svg.streamGraph g.dataPointsContainer > *");
     });
 
     itClient("selection test", function (done) {

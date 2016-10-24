@@ -4,7 +4,7 @@ visualConfig.
 describe("Histogram", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.histogram g.columns > *");
+            .waitForExist("svg.histogram g.columns > *");
     });
 
     itClient("selection test", function (done) {

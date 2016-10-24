@@ -4,11 +4,12 @@ visualConfig.
 describe("AsterPlot", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.asterPlot g.asterSlices");
+            .waitForExist("svg.asterPlot g.asterSlices > path.asterSlice");
     });
 
     itClient("selection test", function (done) {
         var visual = new clientVisuals.AsterPlot();
+
         clientHelpers.clickElement(visual.slices.eq(0));
         clientHelpers.clickElement(visual.slices.eq(1), true);
 

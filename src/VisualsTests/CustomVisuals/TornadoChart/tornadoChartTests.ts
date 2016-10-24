@@ -4,7 +4,7 @@ visualConfig.
 describe("TornadoChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.tornado-chart g.columns > *");
+            .waitForExist("svg.tornado-chart g.columns > *");
     });
 
     itClient("selection test", function (done) {

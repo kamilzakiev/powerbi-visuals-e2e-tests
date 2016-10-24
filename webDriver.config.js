@@ -1,11 +1,11 @@
 module.exports = {
-    //version: "3.0.0-beta4",
+    version: "3.0.1",
     drivers: {
         "chrome": {
             version: "2.24"
         },
         "internet explorer": {
-            version: "3.0.0"
+            version: "2.53.1"
         },
         "firefox": {
             version: "0.11.1"

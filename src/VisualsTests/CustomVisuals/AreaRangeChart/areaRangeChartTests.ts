@@ -3,7 +3,7 @@ import {visualConfig} from "../../exports";
 visualConfig.describe("AreaRangeChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.areaRangeChart > g.chart > *");
+            .waitForExist("svg.areaRangeChart > g.chart > *");
     });
 
     itClient("selection test", function (done) {

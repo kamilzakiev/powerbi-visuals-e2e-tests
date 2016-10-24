@@ -4,7 +4,7 @@ visualConfig.
 describe("RadarChart", __dirname, (reportUrl) => {
     beforeEach(() => {
         return browser
-            .waitForVisible("svg.radarChart g.chartNode > *");
+            .waitForExist("svg.radarChart g.chartNode > *");
     });
 
     itClient("selection test", function (done) {

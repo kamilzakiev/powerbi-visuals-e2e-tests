@@ -1,1 +1,1 @@
-﻿export * from "../../node_modules/visual-regression-test-runner/lib/visual-regression-test-runner/exports";
+﻿export * from "../../node_modules/webdriver-client-test-runner/lib/webdriver-client-test-runner/exports";
