@@ -1,15 +1,15 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("Histogram", __dirname, (reportUrl) => {
+VisualConfig.
+describe("Histogram", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.histogram g.columns > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.Histogram();
-        clientHelpers.clickElement(visual.columnRects.eq(0), true);
+        var visual = new ClientVisuals.Histogram();
+        ClientHelpers.clickElement(visual.columnRects.eq(0), true);
 
         visual.columnRects.toArray().map($).forEach((e,i) => {
             if(i >= 1) {
@@ -19,7 +19,7 @@ describe("Histogram", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "7")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "7")
             .then(done, done.fail);
     });
 });

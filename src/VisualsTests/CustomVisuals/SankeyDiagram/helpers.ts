@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class SankeyDiagram {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.sankeyDiagram").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.sankeyDiagram").parent();
 		}
 
 		public get rootElement() {

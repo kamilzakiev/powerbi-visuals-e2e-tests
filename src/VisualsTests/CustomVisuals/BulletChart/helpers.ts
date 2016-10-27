@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class BulletChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("div.bulletChart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("div.bulletChart").parent();
 		}
 
 		public get rootElement() {

@@ -12,8 +12,5 @@ module.exports = {
         { browserName: "internet explorer" },
         //{ browserName: "firefox" },
     ],
-    execFiles: [
-        "./lib/Common/ClientModules/**/*.js"
-    ],
     testPageInitMode: "manually"
 }

@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class GlobeMap {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("div > div + div > canvas").parent().parent().parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("div > div + div > canvas").parent().parent().parent();
 		}
 
 		public get rootElement() {

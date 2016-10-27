@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class Timeline {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.timeline").parent().parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.timeline").parent().parent();
 		}
 
 		public get rootElement() {

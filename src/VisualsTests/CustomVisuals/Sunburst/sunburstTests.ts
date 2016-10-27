@@ -1,21 +1,21 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("Sunburst", __dirname, (reportUrl) => {
+VisualConfig.
+describe("Sunburst", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.mainDrawArea g.container > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.Sunburst();
+        var visual = new ClientVisuals.Sunburst();
 
         if(jsCommon.BrowserUtils.isFirefox()) {
             done();
             return;
         };
 
-        clientHelpers.dispatchMouseEvent("mousedown", visual.visibleNodes.eq(0));
+        ClientHelpers.dispatchMouseEvent("mousedown", visual.visibleNodes.eq(0));
 
         visual.visibleNodes.toArray().map($).forEach((e,i) => {
             if(i >= 1) {
@@ -25,7 +25,7 @@ describe("Sunburst", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "33")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "33")
             .then(done, done.fail);
     });
 });

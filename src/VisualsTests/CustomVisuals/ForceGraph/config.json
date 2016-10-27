@@ -1,6 +1,6 @@
 {
   "browsers": {
-    "internet explorer": true,
+    "internet explorer": false,
     "chrome": true,
     "firefox": true,
     "edge": false

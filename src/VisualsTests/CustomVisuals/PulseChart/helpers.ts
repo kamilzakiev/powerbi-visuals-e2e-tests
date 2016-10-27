@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class PulseChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.pulseChart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.pulseChart").parent();
 		}
 
 		public get rootElement() {

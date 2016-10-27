@@ -1,4 +1,5 @@
 ﻿import {_, Path, Q, FS} from "../externals";
+import {VisualConfig} from "../exports";
 
 module WebdriverIOExJasmineClient {
     const jasmineCoreJsContent = FS.readFileSync(Path.join(Path.dirname(
@@ -14,6 +15,7 @@ module WebdriverIOExJasmineClient {
                     .then(result => {
                         if(!result.value) {
                             return client
+                                .then(() => VisualConfig.executeClientHelpers())
                                 .execute(function(code) { eval(code); }, jasmineCoreJsContent) //load jasmine core
                                 .catch(err => { throw new Error("Spec execution: There is an error loading jasmine"); });
                         }

@@ -1,17 +1,17 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("BulletChart", __dirname, (reportUrl) => {
+VisualConfig.
+describe("BulletChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("div.bulletChart rect.range");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.BulletChart();
+        var visual = new ClientVisuals.BulletChart();
 
-        clientHelpers.clickElement(visual.rangeRectsGrouped[0].first());
-        clientHelpers.clickElement(visual.rangeRectsGrouped[1].first(), true);
+        ClientHelpers.clickElement(visual.rangeRectsGrouped[0].first());
+        ClientHelpers.clickElement(visual.rangeRectsGrouped[1].first(), true);
 
         visual.rangeRectsGrouped.map(e => e.first()).forEach((e,i) => {
             if(i >= 2) {
@@ -21,7 +21,7 @@ describe("BulletChart", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "222K")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "222K")
             .then(done, done.fail);
     });
 });

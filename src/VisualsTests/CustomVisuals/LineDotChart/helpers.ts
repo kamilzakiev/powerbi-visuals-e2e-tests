@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class LineDotChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.lineDotChart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.lineDotChart").parent();
 		}
 
 		public get rootElement() {

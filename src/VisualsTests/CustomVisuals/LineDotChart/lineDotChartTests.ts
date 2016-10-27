@@ -1,15 +1,15 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("LineDotChart", __dirname, (reportUrl) => {
+VisualConfig.
+describe("LineDotChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.lineDotChart g.line circle.point");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.LineDotChart();
-        clientHelpers.clickElement(visual.dots.eq(0));
+        var visual = new ClientVisuals.LineDotChart();
+        ClientHelpers.clickElement(visual.dots.eq(0));
 
         setTimeout(() => {
             visual.dots.toArray().map($).forEach((e,i) => {
@@ -19,7 +19,7 @@ describe("LineDotChart", __dirname, (reportUrl) => {
                     expect(e).toHaveCss({"opacity":"1"});
                 }
             });
-            clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "1")
+            ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "1")
             .then(done, done.fail);
         }, 5000);
     });

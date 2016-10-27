@@ -1,15 +1,15 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("GlobeMap", __dirname, (reportUrl) => {
+VisualConfig.
+describe("GlobeMap", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("div > div + div > canvas");
     });
 
     itClient("dom validation tests", function (done) {
-        var visual = new clientVisuals.GlobeMap();
-        clientHelpers.setTimeoutTry(() => {
+        var visual = new ClientVisuals.GlobeMap();
+        ClientHelpers.setTimeoutTry(() => {
             var gl = visual.getCanvasContext();
 
             expect(gl.checkFramebufferStatus(gl.FRAMEBUFFER)).toBe(gl.FRAMEBUFFER_COMPLETE);

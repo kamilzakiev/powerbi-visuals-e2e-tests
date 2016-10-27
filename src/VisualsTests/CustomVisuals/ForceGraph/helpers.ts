@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class ForceGraph {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.forceGraph").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.forceGraph").parent();
 		}
 
 		public get rootElement() {

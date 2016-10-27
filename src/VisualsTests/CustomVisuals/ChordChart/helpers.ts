@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class ChordChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.chordChart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.chordChart").parent();
 		}
 
 		public get rootElement() {

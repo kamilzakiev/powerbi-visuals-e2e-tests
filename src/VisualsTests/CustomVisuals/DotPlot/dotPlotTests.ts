@@ -1,16 +1,16 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("DotPlot", __dirname, (reportUrl) => {
+VisualConfig.
+describe("DotPlot", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.dotplot g.dotplotGroup > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.DotPlot();
-        clientHelpers.clickElement(visual.dotGroups.eq(0));
-        clientHelpers.clickElement(visual.dotGroups.eq(1), true);
+        var visual = new ClientVisuals.DotPlot();
+        ClientHelpers.clickElement(visual.dotGroups.eq(0));
+        ClientHelpers.clickElement(visual.dotGroups.eq(1), true);
 
         visual.dotGroups.toArray().map($).forEach((e,i) => {
             if(i >= 2) {
@@ -20,7 +20,7 @@ describe("DotPlot", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "$152K")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "$152K")
             .then(done, done.fail);
     });
 });

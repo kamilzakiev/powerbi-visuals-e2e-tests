@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class AreaRangeChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.areaRangeChart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.areaRangeChart").parent();
 		}
 
 		public get rootElement() {

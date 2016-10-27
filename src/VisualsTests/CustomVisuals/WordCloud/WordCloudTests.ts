@@ -1,7 +1,7 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("WordCloud", __dirname, (reportUrl) => {
+VisualConfig.
+describe("WordCloud", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.wordCloud g.words > g.word > *")
@@ -9,9 +9,9 @@ describe("WordCloud", __dirname, (reportUrl) => {
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.WordCloud();
-        clientHelpers.clickElement(visual.getWordRectByText("visualize"));
-        clientHelpers.clickElement(visual.getWordRectByText("data"), true);
+        var visual = new ClientVisuals.WordCloud();
+        ClientHelpers.clickElement(visual.getWordRectByText("visualize"));
+        ClientHelpers.clickElement(visual.getWordRectByText("data"), true);
 
         visual.wordRects.toArray().map(e => $(e).siblings()).forEach((e,i) => {
             if(e.text() === "visualize" || e.text() === "data") {
@@ -21,7 +21,7 @@ describe("WordCloud", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "6")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "6")
             .then(done, done.fail);
     });
 });

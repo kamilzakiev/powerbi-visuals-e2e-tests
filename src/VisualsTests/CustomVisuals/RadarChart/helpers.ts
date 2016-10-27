@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class RadarChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.radarChart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.radarChart").parent();
 		}
 
 		public get rootElement() {

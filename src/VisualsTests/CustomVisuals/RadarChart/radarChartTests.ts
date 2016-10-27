@@ -1,16 +1,16 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("RadarChart", __dirname, (reportUrl) => {
+VisualConfig.
+describe("RadarChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.radarChart g.chartNode > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.RadarChart();
-        clientHelpers.clickElement(visual.chartDotsGrouped[0].eq(0));
-        clientHelpers.clickElement(visual.chartDotsGrouped[0].eq(1), true);
+        var visual = new ClientVisuals.RadarChart();
+        ClientHelpers.clickElement(visual.chartDotsGrouped[0].eq(0));
+        ClientHelpers.clickElement(visual.chartDotsGrouped[0].eq(1), true);
 
         visual.chartDotsGrouped.forEach(dots => dots.toArray().map($).forEach((e,i) => {
             if(i >= 2) {
@@ -20,7 +20,7 @@ describe("RadarChart", __dirname, (reportUrl) => {
             }
         }));
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "14")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "14")
             .then(done, done.fail);
     });
 });

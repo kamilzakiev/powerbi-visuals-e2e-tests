@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class WordCloud {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.wordCloud").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.wordCloud").parent();
 		}
 
 		public get rootElement() {

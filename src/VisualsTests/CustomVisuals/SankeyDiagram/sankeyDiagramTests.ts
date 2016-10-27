@@ -1,16 +1,16 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("SankeyDiagram", __dirname, (reportUrl) => {
+VisualConfig.
+describe("SankeyDiagram", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.sankeyDiagram g.links > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.SankeyDiagram();
-        clientHelpers.clickElement(visual.linkElements.eq(0));
-        clientHelpers.clickElement(visual.linkElements.eq(1), true);
+        var visual = new ClientVisuals.SankeyDiagram();
+        ClientHelpers.clickElement(visual.linkElements.eq(0));
+        ClientHelpers.clickElement(visual.linkElements.eq(1), true);
 
         visual.linkElements.toArray().map($).forEach((e,i) => {
             if(i >= 2) {
@@ -20,7 +20,7 @@ describe("SankeyDiagram", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "9")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "9")
             .then(done, done.fail);
     });
 });

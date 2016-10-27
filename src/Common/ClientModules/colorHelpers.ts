@@ -1,4 +1,4 @@
-﻿namespace clientHelpers {
+﻿namespace ClientHelpers {
     export function convertColorToRgbColor(color: string): jsCommon.Color.RgbColor {
         if(!(<any>convertColorToRgbColor).colorHex) {
             (<any>convertColorToRgbColor).colorHex = {

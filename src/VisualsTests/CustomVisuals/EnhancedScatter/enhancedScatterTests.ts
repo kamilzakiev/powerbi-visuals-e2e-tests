@@ -1,15 +1,15 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("EnhancedScatter", __dirname, (reportUrl) => {
+VisualConfig.
+describe("EnhancedScatter", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.enhancedScatterChart > svg.svgScrollable svg > g.ScatterMarkers > * ");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.EnhancedScatter();
-        clientHelpers.clickElement(visual.dots.eq(0));
+        var visual = new ClientVisuals.EnhancedScatter();
+        ClientHelpers.clickElement(visual.dots.eq(0));
 
         visual.dots.toArray().map($).forEach((e,i) => {
             if(i >= 1) {
@@ -19,7 +19,7 @@ describe("EnhancedScatter", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "10")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "10")
             .then(done, done.fail);
     });
 });

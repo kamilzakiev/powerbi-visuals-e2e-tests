@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class MekkoChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg").parent();
 		}
 
 		public get rootElement() {

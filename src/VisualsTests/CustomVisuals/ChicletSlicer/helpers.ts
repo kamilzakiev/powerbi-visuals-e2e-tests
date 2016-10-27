@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class ChicletSlicer {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("div.chicletSlicer").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("div.chicletSlicer").parent();
 		}
 
 		public get rootElement() {

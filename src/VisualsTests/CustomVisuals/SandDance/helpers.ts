@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class SandDance {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("div.sandDance").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("div.sandDance").parent();
 		}
 
 		public get rootElement() {

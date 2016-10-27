@@ -1,16 +1,16 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("MekkoChart", __dirname, (reportUrl) => {
+VisualConfig.
+describe("MekkoChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg svg.columnChartMainGraphicsContext > g.series > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.MekkoChart();
-        clientHelpers.clickElement(visual.columnsWithSize.eq(0));
-        clientHelpers.clickElement(visual.columnsWithSize.eq(1), true);
+        var visual = new ClientVisuals.MekkoChart();
+        ClientHelpers.clickElement(visual.columnsWithSize.eq(0));
+        ClientHelpers.clickElement(visual.columnsWithSize.eq(1), true);
 
         visual.columnsWithSize.toArray().map($).forEach((e,i) => {
             if(i >= 2) {
@@ -20,7 +20,7 @@ describe("MekkoChart", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "138K")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "138K")
             .then(done, done.fail);
     });
 });

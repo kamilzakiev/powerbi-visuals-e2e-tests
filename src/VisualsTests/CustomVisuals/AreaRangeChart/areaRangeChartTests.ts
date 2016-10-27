@@ -1,6 +1,6 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 /*
-visualConfig.describe("AreaRangeChart", __dirname, (reportUrl) => {
+visualConfig.describe("AreaRangeChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.areaRangeChart > g.chart > *");

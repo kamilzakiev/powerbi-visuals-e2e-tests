@@ -1,17 +1,17 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("TornadoChart", __dirname, (reportUrl) => {
+VisualConfig.
+describe("TornadoChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.tornado-chart g.columns > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.TornadoChart();
+        var visual = new ClientVisuals.TornadoChart();
 
-        clientHelpers.clickElement(visual.columns.eq(0));
-        clientHelpers.clickElement(visual.columns.eq(1), true);
+        ClientHelpers.clickElement(visual.columns.eq(0));
+        ClientHelpers.clickElement(visual.columns.eq(1), true);
 
         visual.columns.toArray().map($).forEach((e,i) => {
             if(i % (visual.columns.length/2) >= 2) {
@@ -21,7 +21,7 @@ describe("TornadoChart", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "82.40K")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "82.40K")
             .then(done, done.fail);
     });
 });

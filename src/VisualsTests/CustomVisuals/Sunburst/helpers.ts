@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class Sunburst {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.mainDrawArea").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.mainDrawArea").parent();
 		}
 
 		public get rootElement() {

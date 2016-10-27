@@ -1,4 +1,4 @@
-﻿namespace clientHelpers {
+﻿namespace ClientHelpers {
     export function getMouseEvent(type: string, options: MouseEventInit) {
         var event = document.createEvent('MouseEvents');
         event.initMouseEvent(

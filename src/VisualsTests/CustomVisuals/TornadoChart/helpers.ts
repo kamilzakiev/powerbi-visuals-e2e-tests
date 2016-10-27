@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class TornadoChart {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.tornado-chart").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.tornado-chart").parent();
 		}
 
 		public get rootElement() {

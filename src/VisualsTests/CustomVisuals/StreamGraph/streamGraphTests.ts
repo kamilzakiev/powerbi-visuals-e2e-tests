@@ -1,16 +1,16 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("StreamGraph", __dirname, (reportUrl) => {
+VisualConfig.
+describe("StreamGraph", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.streamGraph g.dataPointsContainer > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.StreamGraph();
-        clientHelpers.clickElement(visual.layers.eq(0));
-        clientHelpers.clickElement(visual.layers.eq(1), true);
+        var visual = new ClientVisuals.StreamGraph();
+        ClientHelpers.clickElement(visual.layers.eq(0));
+        ClientHelpers.clickElement(visual.layers.eq(1), true);
 
         visual.layers.toArray().map($).forEach((e,i) => {
             if(i >= 2) {
@@ -20,7 +20,7 @@ describe("StreamGraph", __dirname, (reportUrl) => {
             }
         });
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "191.60")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "191.60")
             .then(done, done.fail);
     });
 });

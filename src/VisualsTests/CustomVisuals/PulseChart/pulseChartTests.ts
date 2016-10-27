@@ -1,21 +1,21 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("PulseChart", __dirname, (reportUrl) => {
+VisualConfig.
+describe("PulseChart", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("svg.pulseChart g.dotsContainer > *");
     });
 
     itClient("selection test", function (done) {
-        var visual = new clientVisuals.PulseChart();
-        clientHelpers.clickElement(visual.dotsContainerDot.eq(0));
-        clientHelpers.clickElement(visual.dotsContainerDot.eq(1), true);
+        var visual = new ClientVisuals.PulseChart();
+        ClientHelpers.clickElement(visual.dotsContainerDot.eq(0));
+        ClientHelpers.clickElement(visual.dotsContainerDot.eq(1), true);
 
         expect(visual.tooltipContainerTooltip.eq(0)).toBeInDOM();
         expect(visual.tooltipContainerTooltip.eq(1)).toBeInDOM();
 
-        clientHelpers.waitUntil(() => clientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "110.95")
+        ClientHelpers.waitUntil(() => ClientHelpers.getTextWithoutChild($("svg.card > g > text.value")) === "110.95")
             .then(done, done.fail);
     });
 });

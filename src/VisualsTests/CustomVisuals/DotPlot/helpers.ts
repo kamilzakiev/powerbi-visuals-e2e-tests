@@ -1,9 +1,9 @@
-﻿namespace clientVisuals {
+﻿namespace ClientVisuals {
 	export class DotPlot {
         private rootElementValue: JQuery;
 
 		constructor(element?: JQuery) {
-            this.rootElementValue = (element || clientHelpers.getVisualsRootElements()).find("svg.dotplot").parent();
+            this.rootElementValue = (element || ClientHelpers.getVisualsRootElements()).find("svg.dotplot").parent();
 		}
 
 		public get rootElement() {

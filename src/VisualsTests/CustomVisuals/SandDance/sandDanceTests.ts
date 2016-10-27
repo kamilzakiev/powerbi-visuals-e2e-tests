@@ -1,15 +1,15 @@
-import {visualConfig} from "../../exports";
+import {VisualConfig} from "../../../Common/exports";
 
-visualConfig.
-describe("SandDance", __dirname, (reportUrl) => {
+VisualConfig.
+describe("SandDance", (reportUrl) => {
     beforeEach(() => {
         return browser
             .waitForExist("div.sandDance canvas.canvas3d");
     });
 
     itClient("dom validation tests", function (done) {
-        var visual = new clientVisuals.SandDance();
-        clientHelpers.setTimeoutTry(function() {
+        var visual = new ClientVisuals.SandDance();
+        ClientHelpers.setTimeoutTry(function() {
             var gl = visual.getCanvas3dContext();
             expect(gl.checkFramebufferStatus(gl.FRAMEBUFFER)).toBe(gl.FRAMEBUFFER_COMPLETE);
             expect(gl.drawingBufferWidth).toBeGreaterThan(100);

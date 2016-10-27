@@ -9,6 +9,6 @@
     "noEmitOnError": true,
     "noResolve": false,
     "pretty": true,
-    "THIS CONFIG IS ONLY FOR DECLARATION": true
+    "THIS CONFIG IS ONLY FOR DECLARATION": null
   }
 }
