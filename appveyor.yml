@@ -20,6 +20,9 @@ install:
   # installing local npm packages
   - npm install
 
+  # installing browsers binaries
+  - node_modules\.bin\gulp install-browsers-binaries
+
 build: off
 
 test_script:
@@ -36,4 +39,5 @@ matrix:
 
 cache:
   - C:\Users\appveyor\AppData\Roaming\npm-cache -> package.json         # npm cache
+  - browsers -> browsersConfig.js
  # - node_modules -> package.json                                        # local npm modules

@@ -21,3 +21,4 @@
 /*debug.log
 /image_comparison/**/*.png
 !/image_comparison/**/*.baseline.png
+/browsers

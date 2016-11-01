@@ -1,5 +1,5 @@
 module.exports = {
-    version: "2.53.1", //"3.0.1",
+    version: "2.53.1",//"3.0.1",
     drivers: {
         "chrome": {
             version: "2.24"
@@ -8,7 +8,7 @@ module.exports = {
             version: "2.53.1"
         },
         "firefox": {
-            version: "0.10.0"//"0.11.1"
+            version: "0.11.1"
         }
     }
 };
