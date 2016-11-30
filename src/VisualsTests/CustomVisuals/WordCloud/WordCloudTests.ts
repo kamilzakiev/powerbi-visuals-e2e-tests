@@ -29,10 +29,10 @@ VisualConfig.
                             expect(parseFloat(e.css('fill-opacity'))).toBeLessThan(1);
                         }
                     });
-                })
-                .frameParent()
-                .executeSpec(function () {
-                    expect(ClientHelpers.getTextWithoutChild($("svg.card > g > text.value"))).toBe("6");
+                //})
+                //.frameParent()
+                //.executeSpec(function () {
+                //    expect(ClientHelpers.getTextWithoutChild($("svg.card > g > text.value"))).toBe("6");
                 });
         });
     });
