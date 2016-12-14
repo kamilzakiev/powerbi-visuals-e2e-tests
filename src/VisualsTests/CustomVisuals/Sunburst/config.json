@@ -2,7 +2,7 @@
   "browsers": {
     "internet explorer": true,
     "chrome": true,
-    "firefox": true,
+    "firefox": false,
     "edge": false
   },
   "reports": {
