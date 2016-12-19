@@ -9,11 +9,11 @@ module.exports = {
     specs: ["./lib/VisualsTests/**/*Tests.js"],
     capabilities: [
         { browserName: "chrome" },
-        { browserName: "internet explorer" },
+        /*{ browserName: "internet explorer" },
         {
             browserName: "firefox",
             firefox_binary: getBrowserBinPath("firefox")
-        },
+        },*/
     ],
     testPageInitMode: "manually"
 };
