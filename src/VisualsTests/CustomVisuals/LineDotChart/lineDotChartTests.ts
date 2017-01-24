@@ -15,13 +15,15 @@ describe("LineDotChart", (reportUrl) => {
                 var visual = new ClientVisuals.LineDotChart();
                 ClientHelpers.clickElement(visual.dots.eq(0));
 
-                visual.dots.toArray().map($).forEach((e, i) => {
-                    if (i >= 1) {
-                        expect(e).not.toHaveCss({ "opacity": "1" });
-                    } else {
-                        expect(e).toHaveCss({ "opacity": "1" });
-                    }
-                });
+                setTimeout(() => {
+                    visual.dots.toArray().map($).forEach((e, i) => {
+                        if (i >= 1) {
+                            expect(e).not.toHaveCss({ "opacity": "1" });
+                        } else {
+                            expect(e).toHaveCss({ "opacity": "1" });
+                        }
+                    });
+                }, 5000);                
             })
             .frameParent()
             .executeSpec(function (done) {
